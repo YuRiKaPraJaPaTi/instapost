@@ -1,0 +1,4 @@
+web: bin/rails server
+
+css: npm build:css -- --watch
+css: bin/rails tailwindcss:watch

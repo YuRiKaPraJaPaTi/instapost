@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "esbuild-rails": "^1.0.7",
+    "flowbite": "^3.1.2"
+  },
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "build:css": "npx tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

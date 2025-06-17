@@ -1,0 +1,9 @@
+<h4>showing user info</h4>
+
+<%= @user.email.split('@').first %>
+
+<%= pluralize(@user.posts.count, 'post') %>
+
+<% @user.posts.each do |post| %>
+  <%= image_tag post.photo, class: 'mb-4' %>
+<% end %>
