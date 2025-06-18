@@ -1,9 +1,25 @@
-<h4>showing user info</h4>
+<a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <span class="self-center text-2xl font-semibold whitespace-nowrap font-pacifico text-[30px] tracking-[2px] text-[#337ab7]">Home</span>
+    </a>
 
-<%= @user.email.split('@').first %>
+<% if @user == current_user %>
+
+  <%= link_to "Edit", edit_user_path(@user), class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+
+  <%= button_to "Destroy", @user, method: :delete, class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer", data: { turbo_confirm: "Are you sure?" } %>
+
+<% end %>
+
+<h4 class="text-2xl font-semibold mb-4">User info</h4>
+
+<p class="text-lg"><strong>User:</strong><%= @user.email.split('@').first %>
+
+<p class="text-lg"><strong><p>Email: <%= @user.email %></p>
 
 <%= pluralize(@user.posts.count, 'post') %>
 
+<h4>Images Collection</h4>
 <% @user.posts.each do |post| %>
   <%= image_tag post.photo, class: 'mb-4' %>
 <% end %>
+
