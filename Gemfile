@@ -72,7 +72,7 @@ gem 'simple_form', '~> 5.3'
 
 gem "tailwindcss-ruby", "~> 4.1"
 
-gem "tailwindcss-rails", "~> 4.2"
+gem "tailwindcss-rails", "~> 4.3"
 
 gem 'acts_as_votable', '~> 0.14.0'
 
